@@ -28,5 +28,8 @@ RUN pip uninstall -y opencv-python opencv-contrib-python || true
 # Copy the rest of the application
 COPY . .
 
+ARG PORT
+ENV PORT=${PORT:-8080}
+
 # Start the rigorous gunicorn deployment server securely mapped to the cloud's dynamic port system
 CMD gunicorn run:app --bind 0.0.0.0:$PORT --timeout 120 --workers 2
