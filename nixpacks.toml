@@ -1,4 +1,0 @@
-providers = ["python"]
-
-[phases.setup]
-aptPkgs = ["libgl1", "libglib2.0-0", "default-libmysqlclient-dev", "pkg-config"]
