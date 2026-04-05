@@ -1,0 +1,4 @@
+providers = ["python"]
+
+[phases.setup]
+nixPkgs = ["python311", "gcc", "glib", "libGL", "xorg.libxcb", "xorg.libX11", "xorg.libXext", "xorg.libXrender", "xorg.libICE", "xorg.libSM"]
