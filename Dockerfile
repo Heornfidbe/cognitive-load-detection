@@ -32,4 +32,4 @@ ARG PORT
 ENV PORT=${PORT:-8080}
 
 # Start the rigorous gunicorn deployment server securely mapped to the cloud's dynamic port system
-CMD gunicorn run:app --bind 0.0.0.0:$PORT --timeout 120 --workers 2
+CMD exec gunicorn run:app --bind 0.0.0.0:$PORT --timeout 120 --workers 2
