@@ -29,4 +29,4 @@ RUN pip uninstall -y opencv-python opencv-contrib-python || true
 COPY . .
 
 # Start the rigorous gunicorn deployment server securely mapped to the cloud's dynamic port system
-CMD ["sh", "-c", "gunicorn run:app --bind 0.0.0.0:$PORT --timeout 120 --workers 2"]
+CMD ["gunicorn", "run:app", "--bind", "0.0.0.0:8080", "--timeout", "120", "--workers", "2"]
