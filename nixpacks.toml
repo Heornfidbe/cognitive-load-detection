@@ -1,4 +1,10 @@
 providers = ["python"]
 
 [phases.setup]
-nixPkgs = ["python311", "gcc", "glib", "libGL", "xorg.libxcb", "xorg.libX11", "xorg.libXext", "xorg.libXrender", "xorg.libICE", "xorg.libSM"]
+nixPkgs = ["python312", "gcc", "glib", "libGL"]
+
+[phases.install]
+cmds = [
+    "python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt",
+    ". /opt/venv/bin/activate && pip uninstall -y opencv-python opencv-contrib-python || true"
+]
